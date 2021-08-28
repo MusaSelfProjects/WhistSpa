@@ -1,0 +1,10 @@
+.item-counter {
+  color: darkgreen;
+  display: inline;
+}
+
+.item-sales {
+    color: red;
+    display: inline;
+  }
+

@@ -1,0 +1,23 @@
+.cart-debt {
+  background-color: darkgreen;
+}
+
+.sticky-med {
+  position: fixed;
+  top: 0;
+  right: 25%;
+}
+
+.my-cart {
+  background-color: brown;
+  float: right;
+  padding-right: 50px;
+}
+.pay-area {
+  float: right;
+  justify-content: space-evenly;
+  padding-right: 10px;
+}
+/* .fffffff {
+  float: right;
+} */

@@ -1,0 +1,31 @@
+.text-item {
+  /* background-color: chartreuse; */
+
+  border-radius: 5px;
+  width: 100px;
+  white-space: normal;
+}
+/* .img-item {
+  background-color: chocolate;
+} */
+.delete-btn {
+  float: right;
+  width: 10px;
+  /* background-color: crimson; */
+  /* width: 50%; */
+}
+
+.item-container {
+  border-style: groove;
+  width: 600px;
+  height: 150px;
+  border-radius: 5px;
+  border-color: darkblue;
+}
+
+.img-product {
+  float: right;
+  text-align: center;
+  height: 100px;
+  width: 200px;
+}

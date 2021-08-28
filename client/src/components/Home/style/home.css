@@ -1,0 +1,27 @@
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+  grid-gap: 1%;
+  margin: 1%;
+}
+
+.desc {
+  height: 4em;
+  line-height: 1em;
+  overflow: hidden;
+}
+.card-header {
+  height: 3em;
+  line-height: 1em;
+}
+
+.cart-list {
+  background-color: black;
+}
+
+.btn-con {
+  height: 10;
+  width: 100%;
+  float: left;
+  background-color: brown;
+}

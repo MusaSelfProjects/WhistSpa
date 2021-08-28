@@ -1,0 +1,44 @@
+router.get("/top", function (req, res) {
+  con.query(
+    `
+      
+      select  product_id, count(product_id) as count ,p.title as product_name
+         from product_transaction as pt , products as p
+         where pt.product_id=p.id
+         group by product_id
+         order by count desc
+          limit 5
+
+  `,
+    function (error, products, fields) {
+      console.log(" top 5--------------------------------");
+      console.log(products);
+      res.send(products);
+    }
+  );
+
+  //select * from product_transaction group by product_id;
+  // select product_id, count(*) as count  from product_transaction group by product_id;
+});
+
+router.get("/distinct", function (req, res) {
+  con.query(
+    `
+    
+      select  product_id, count(product_id) as count , p.title as product_name
+
+      from (select  distinct pt.product_id,pt.transaction_id
+        from product_transaction as pt 
+        group by pt.transaction_id
+        
+        ) as pt , products as p
+         where pt.product_id=p.id
+         group by  product_id
+         order by count desc
+          limit 5
+  `,
+    function (error, results, fields) {
+      res.send(results);
+    }
+  );
+});

@@ -1,0 +1,10 @@
+table {
+  width: 100%;
+  table-layout: fixed;
+}
+
+.sticky-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+}
