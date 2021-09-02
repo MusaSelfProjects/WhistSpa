@@ -1,0 +1,12 @@
+ updateProductTransaction = async (productArray, transaction) => {
+    await axios
+      .post(`${serverApi}/product_transactions`, {
+        data: { productArray, transaction },
+      })
+      .then(async (response) => {
+        await this.getProducts();
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };

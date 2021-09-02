@@ -1,0 +1,4 @@
+{
+    "getProducts":"SELECT *  FROM products;",
+    "postProducts":"INSERT INTO products VALUES(  ?,?, ?, ?, ?)"
+}

@@ -1,7 +1,10 @@
 import { React, useEffect } from "react";
+import { observer, inject } from "mobx-react";
 import { Container, Row, Col } from "react-bootstrap";
 import BoxList from "./BoxList";
-import { observer, inject } from "mobx-react";
+
+import "./style/stats.css";
+
 const Stats = inject("ShoppingStore")(
   observer((props) => {
     useEffect(() => {
@@ -15,7 +18,7 @@ const Stats = inject("ShoppingStore")(
     };
     return (
       <div>
-        <Container>
+        <Container className="stats-container">
           <br></br>
           <Row>
             <Col>

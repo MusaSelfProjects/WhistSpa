@@ -2,16 +2,12 @@
   background-color: darkgreen;
 }
 
-.sticky-med {
-  position: fixed;
-  top: 0;
-  right: 25%;
-}
-
 .my-cart {
-  background-color: brown;
+  /* background-color: brown; */
   float: right;
-  padding-right: 50px;
+  padding-right: 80px;
+  top: 3px;
+  width: 50px;
 }
 .pay-area {
   float: right;

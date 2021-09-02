@@ -31,7 +31,7 @@ const ProductCard = inject("ShoppingStore")(
             <Card.Footer className="desc">{props.item.description}</Card.Footer>
           </Card.Body>
 
-          <Button onClick={handleBuyClick}>Buy</Button>
+          <Button onClick={handleBuyClick}>Add to Cart</Button>
         </Card>
       </div>
     );

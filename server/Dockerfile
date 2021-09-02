@@ -1,7 +1,6 @@
 FROM node:latest
-WORKDIR /app
-COPY package.json ./
-COPY package-lock.json ./
-COPY ./ ./
+WORKDIR /api
+COPY package*.json ./
 RUN npm i
-CMD ["npm", "run", "start"]
+COPY . .
+CMD ["node",  "server.js"]

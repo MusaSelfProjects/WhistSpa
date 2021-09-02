@@ -42,3 +42,31 @@ router.get("/distinct", function (req, res) {
     }
   );
 });
+
+router.post("/product_transactions", function (req, res) {
+  const productArray = req.body.data.productArray;
+  const transaction = req.body.data.transaction;
+  console.log(" mosa ");
+  productArray.forEach((item) => {
+    try {
+      con.query(
+        `
+          INSERT INTO product_transaction
+           VALUES(
+               ${item},
+              ${transaction}
+              )
+          `,
+        function (error, results, fields) {
+          if (error) {
+            console.log(error);
+          }
+        }
+      );
+    } catch (error) {
+      res.status(400).send(error.message);
+    }
+  });
+  res.status(201);
+  res.send("created");
+});

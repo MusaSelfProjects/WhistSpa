@@ -1,6 +1,4 @@
 async function addToProductTransaction(productArray, transaction, con) {
-  console.log(productArray, transaction);
-  console.log(" helper ");
   productArray.forEach((item) => {
     try {
       con.query(

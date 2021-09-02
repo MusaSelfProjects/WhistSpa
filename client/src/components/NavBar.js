@@ -27,7 +27,11 @@ function NavBar(props) {
       </nav>
       <Switch>
         <Route path="/" exact render={() => <Home list={props.list}></Home>} />
-        <Route path="/admin" exact component={Admin} />
+        <Route
+          path="/admin"
+          exact
+          render={() => <Admin list={props.list}></Admin>}
+        />
         <Route
           path="/home"
           exact

@@ -4,17 +4,17 @@ import { observer, inject } from "mobx-react";
 
 const Admin = inject("ShoppingStore")(
   observer((props) => {
-    const fetchData = async () => {
-      await props.ShoppingStore.getProducts();
-    };
+    // const fetchData = async () => {
+    //   await props.ShoppingStore.getProducts();
+    // };
     useEffect(() => {
-      fetchData();
+      // fetchData();
     }, []);
 
     return (
       <div>
         <ProductsList
-          productsList={props.ShoppingStore.productsListComputed}
+          productsList={props.list}
         ></ProductsList>
       </div>
     );

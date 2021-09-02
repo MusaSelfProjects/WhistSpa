@@ -48,6 +48,7 @@ export class ShoppingStore {
     await axios
       .get(`${serverApi}/recentTransactions`)
       .then((response) => {
+        console.log(response);
         this.recentList = response.data;
       })
       .catch(function (error) {
@@ -125,9 +126,23 @@ export class ShoppingStore {
   addNewTransaction = async (total) => {
     const productArray = this.productTransaction;
     await this.addTransaction(total, productArray);
-    await this.getProducts();
+    // await this.getProducts();
     this.cartList = [];
     this.cartDistinctList = [];
+    this.itemCartCounter = {};
+  };
+  addTransaction = async (total, productArray) => {
+    return await axios
+      .post(`${serverApi}/transactions`, {
+        data: { total: total, productArray: productArray },
+      })
+      .then(async (response) => {
+        const transactionID = response.data.id;
+        return transactionID;
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   addToCart = (item) => {
@@ -149,34 +164,6 @@ export class ShoppingStore {
     this.cartList = this.cartList.filter((item) => {
       return item.id !== id;
     });
-  };
-
-  addTransaction = async (total, productArray) => {
-    return await axios
-      .post(`${serverApi}/transactions`, {
-        data: { total: total, productArray: productArray },
-      })
-      .then(async (response) => {
-        console.log(response);
-        const transactionID = response.data.id;
-        return transactionID;
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
-  };
-
-  updateProductTransaction = async (productArray, transaction) => {
-    await axios
-      .post(`${serverApi}/product_transactions`, {
-        data: { productArray, transaction },
-      })
-      .then(async (response) => {
-        await this.getProducts();
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
   };
 }
 

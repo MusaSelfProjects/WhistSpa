@@ -1,0 +1,8 @@
+
+
+
+{
+    "productsTable":"CREATE TABLE IF NOT EXISTS products ( id INT AUTO_INCREMENT PRIMARY KEY, title VARCHAR(80),price INT,description TEXT, image TEXT);"
+,"transactionTable":    "CREATE TABLE IF NOT EXISTS transaction(id INT AUTO_INCREMENT PRIMARY KEY,amount INT,date DATETIME);",
+"productsTransactions":"CREATE TABLE IF NOT EXISTS product_transaction( product_id INT,transaction_id INT, FOREIGN KEY(product_id) REFERENCES products(id) ON DELETE CASCADE ,FOREIGN KEY(transaction_id) REFERENCES transaction(id) );"
+}

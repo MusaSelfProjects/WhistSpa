@@ -3,6 +3,8 @@ import Dropdown from "react-bootstrap/Dropdown";
 import { observer, inject } from "mobx-react";
 import { Row, Col } from "react-bootstrap";
 import Button from "react-bootstrap/Button";
+import { faCartPlus } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import CartItem from "./CartItem";
 import "./style/cart.css";
@@ -13,10 +15,11 @@ const Cart = inject("ShoppingStore")(
     };
 
     return (
-      <div className="my-cart">
+      <div className="my-cart sticky-top">
         <Dropdown>
           <Dropdown.Toggle variant="primary" id="dropdown-basic">
-            Cart Items {props.ShoppingStore.cartLength}
+            <FontAwesomeIcon icon={faCartPlus}></FontAwesomeIcon> {" "}
+            {props.ShoppingStore.cartLength}
           </Dropdown.Toggle>
 
           <Dropdown.Menu>
